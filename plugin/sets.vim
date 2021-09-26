@@ -29,3 +29,4 @@ let g:completion_enable_snippet = 'UltiSnips'
 colorscheme gruvbox
 highlight Normal guibg=none
 
+let mapleader = " "
