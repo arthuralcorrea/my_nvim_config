@@ -4,26 +4,30 @@ local g = vim.g
 local map = vim.api.nvim_set_keymap
 
 require "paq" {
-	"savq/paq-nvim";
-	"preservim/nerdtree";
+	"gruvbox-community/gruvbox",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-vsnip",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/vim-vsnip",
+	"neovim/nvim-lspconfig",
 	"neovim/nvim-lspconfig";
-	'nvim-lua/plenary.nvim';
 	"nvim-telescope/telescope.nvim";
 	"nvim-treesitter/nvim-treesitter",
-	"gruvbox-community/gruvbox",
-	"neovim/nvim-lspconfig",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-vsnip",
-	"hrsh7th/vim-vsnip",
-	"tpope/vim-fugitive"
+	"preservim/nerdtree";
+	"savq/paq-nvim";
+	"tpope/vim-fugitive",
+	'nvim-lua/plenary.nvim',
+  'lifepillar/vim-solarized8',
+  'vim-airline/vim-airline'
 }
 
-
-vim.g.gruvbox_contrast_dark = "hard"
+g.gruvbox_contrast_dark = "hard"
+g.solarized_visibility = "high"
+g.solarized_diffmode = "low"
 
 vim.cmd 'colorscheme gruvbox'
+-- vim.cmd 'colorscheme solarized8'
 
 set.encoding='utf-8'
 set.cmdheight=2
@@ -33,11 +37,9 @@ set.expandtab=true
 set.scrolloff=8
 set.shiftwidth=2
 set.tabstop=2
+set.shiftwidth = 4
 set.termguicolors=true
 set.smartcase=true
-set.completeopt='menu,menuone,noselect'
-set.tabstop = 4
-set.shiftwidth = 4
 set.softtabstop=0
 set.smarttab=true
 set.relativenumber = true
@@ -46,6 +48,7 @@ set.smartcase = true
 set.incsearch = true
 set.smartindent = true
 set.mouse = "nv"
+set.completeopt='menu,menuone,noselect'
 
 g.mapleader = " "
 
@@ -58,23 +61,30 @@ map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', options)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', options)
 map('n', '<leader>ch', ':noh<cr>', options)
 map('n', '<leader>gd', ':lua vim.lsp.buf.definition()<cr>', options)
+map('n', '<leader>gd', ':lua vim.lsp.buf.definition()<cr>', options)
+map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', options)
 map('n', '<leader>gD', ':lua vim.lsp.buf.declaration()<cr>', options)
-map('n', '<leader>gh', ':lua vim.lsp.buf.hover()<cr>', options)
+map('n', '<leader>ghh', ':lua vim.lsp.buf.hover()<cr>', options)
 map('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<cr>', options)
 map('n', '<leader>gr', ':lua vim.lsp.buf.references()<cr>', options)
+map('n', '<leader>gs', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', options)
+map('n', '<leader>gl', ':lua vim.lsp.diagnostic.diagnostic.set_loclist()<cr>', options)
+map('n', '<leader>sh', ':lua vim.lsp.buf.signature_help()<CR>', options)
 map('n', '<leader>oo', ':wincmd o<cr>', options)
 map('n', '<leader>l', ':wincmd l<cr>', options)
-map('n', '<keader>k', ':wincmd k<cr>', options)
+map('n', '<leader>k', ':wincmd k<cr>', options)
 map('n', '<leader>j', ':wincmd j<cr>', options)
 map('n', '<leader>h', ':wincmd h<cr>', options)
 map('n', '<leader>v', ':wincmd v<cr>', options)
-map('n', '<leader>s', ':wincmd v<cr>', options)
+map('n', '<leader>s', ':wincmd s<cr>', options)
 map('n', '<leader>gg', ':Git<cr>', options)
 map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>td', ':e ~/Tasks/TODO.md<cr>', options)
 map('n', '<leader>el', ':e ~/.config/nvim/init.lua<cr>', options)
 map('n', '<leader>tt', ':NERDTreeToggle<cr>', options)
 map('n', '<leader>tf', ':NERDTreeFind<cr>', options)
+map('n', '<leader>fa', ':EslintFixAll<cr>', options)
+map('n', '<leader>ch', ':noh<cr>', options)
 
 local sumneko_root_path = fn.stdpath('cache')..'/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
@@ -108,7 +118,7 @@ local cmp = require'cmp'
 require'nvim-treesitter.configs'.setup {
 highlight = {
     enable = true,
-}
+    }
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -141,5 +151,9 @@ require'lspconfig'.sumneko_lua.setup {
       },
     },
   },
+}
+
+require'lspconfig'.tsserver.setup{
+  capabilities = capabilities;
 }
 
