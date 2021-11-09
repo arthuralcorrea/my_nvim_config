@@ -1,0 +1,20 @@
+require "paq" {
+	"gruvbox-community/gruvbox",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-vsnip",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/vim-vsnip",
+	"neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig";
+	"nvim-telescope/telescope.nvim";
+	"nvim-treesitter/nvim-treesitter",
+	"preservim/nerdtree";
+	"savq/paq-nvim";
+	"tpope/vim-fugitive",
+	'nvim-lua/plenary.nvim',
+  'lifepillar/vim-solarized8',
+  'lifepillar/vim-solarized8',
+  'vim-airline/vim-airline',
+  'neo-vimers/awesomeTODO'
+}
