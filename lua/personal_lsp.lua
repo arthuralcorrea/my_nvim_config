@@ -5,10 +5,10 @@ local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-
 require'lspconfig'.pyright.setup{
   capabilities = capabilities;
 }
+
 require'lspconfig'.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   capabilities = capabilities;
@@ -41,3 +41,14 @@ require'lspconfig'.tsserver.setup{
 
 require'lspconfig'.denols.setup{}
 
+require'lspconfig'.vimls.setup{
+  capabilities = capabilities;
+}
+
+require'lspconfig'.jsonls.setup{
+  capabilities = capabilities;
+}
+
+require'lspconfig'.bashls.setup{
+  capabilities = capabilities;
+}

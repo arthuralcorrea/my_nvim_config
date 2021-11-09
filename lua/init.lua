@@ -1,8 +1,6 @@
-require('personal_cmp')
 require('maps')
-require('personal_packages')
+require('personal_cmp')
 require('personal_lsp')
+require('personal_packages')
 require('sets')
-
-
-
+require('personal_ts')
