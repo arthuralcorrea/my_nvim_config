@@ -24,9 +24,4 @@ local cmp = require'cmp'
     })
   })
 
-require'nvim-treesitter.configs'.setup {
-highlight = {
-    enable = true,
-    }
-}
 

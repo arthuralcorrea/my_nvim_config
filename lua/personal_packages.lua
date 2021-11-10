@@ -6,15 +6,20 @@ require "paq" {
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/vim-vsnip",
 	"neovim/nvim-lspconfig",
-	"neovim/nvim-lspconfig";
-	"nvim-telescope/telescope.nvim";
+	"nvim-telescope/telescope.nvim",
 	"nvim-treesitter/nvim-treesitter",
-	"preservim/nerdtree";
-	"savq/paq-nvim";
+	"savq/paq-nvim",
 	"tpope/vim-fugitive",
-	'nvim-lua/plenary.nvim',
-  'lifepillar/vim-solarized8',
-  'lifepillar/vim-solarized8',
-  'vim-airline/vim-airline',
-  'neo-vimers/awesomeTODO'
+  'nvim-lua/plenary.nvim',
+  'kyazdani42/nvim-web-devicons',
+  'mfussenegger/nvim-dap',
+  {
+      'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
+},
+  {
+  'nvim-lualine/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 }

@@ -1,4 +1,6 @@
 local fn = vim.fn
+local map = vim.api.nvim_set_keymap
+local options = { noremap = true }
 
 local sumneko_root_path = fn.stdpath('cache')..'/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/macOS/lua-language-server"
@@ -52,3 +54,14 @@ require'lspconfig'.jsonls.setup{
 require'lspconfig'.bashls.setup{
   capabilities = capabilities;
 }
+
+map('n', '<leader>gd', ':lua vim.lsp.buf.definition()<cr>', options)
+map('n', '<leader>gd', ':lua vim.lsp.buf.definition()<cr>', options)
+map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', options)
+map('n', '<leader>gD', ':lua vim.lsp.buf.declaration()<cr>', options)
+map('n', '<leader>ghh', ':lua vim.lsp.buf.hover()<cr>', options)
+map('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<cr>', options)
+map('n', '<leader>gr', ':lua vim.lsp.buf.references()<cr>', options)
+map('n', '<leader>gs', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', options)
+map('n', '<leader>gl', ':lua vim.lsp.diagnostic.diagnostic.set_loclist()<cr>', options)
+map('n', '<leader>sh', ':lua vim.lsp.buf.signature_help()<CR>', options)
