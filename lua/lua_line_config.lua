@@ -1,31 +1,30 @@
-require'lualine'.setup{
-    sections = {
+require("lualine").setup {
+  sections = {
     lualine_a = {
-      'mode'
+      "mode",
     },
     lualine_b = {
-      'branch',
-      'diff',
+      "branch",
+      "diff",
       {
-        'diagnostics',
-        sources={
-          'nvim_diagnostic'
-        }
-      }
+        "diagnostics",
+        sources = {
+          "nvim_diagnostic",
+        },
+      },
     },
     lualine_c = {
-      'filename'
+      "filename",
     },
     lualine_x = {
-      'fileformat',
-      'filetype'
+      "fileformat",
+      "filetype",
     },
     lualine_y = {
-      'progress'
+      "progress",
     },
     lualine_z = {
-      'location'
-    }
+      "location",
+    },
   },
 }
-

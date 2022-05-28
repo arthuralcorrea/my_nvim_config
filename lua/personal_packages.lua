@@ -1,6 +1,7 @@
 require "paq" {
   'tpope/vim-dispatch',
   'clojure-vim/vim-jack-in',
+  "wesleimp/stylua.nvim",
   'radenling/vim-dispatch-neovim',
   'Olical/conjure',
   'vimwiki/vimwiki',

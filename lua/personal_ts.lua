@@ -1,5 +1,5 @@
-require'nvim-treesitter.configs'.setup {
-highlight = {
+require("nvim-treesitter.configs").setup {
+  highlight = {
     enable = true,
-    }
+  },
 }

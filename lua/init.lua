@@ -1,13 +1,13 @@
-require("lua_line_config")
-require("harpoon_config")
-require("maps")
-require("personal_cmp")
-require("personal_lsp")
-require("personal_nvim_tree")
-require("personal_packages")
-require("personal_ts")
-require("sets")
-require("personal_dap")
-require("dashboard_config")
-require("gitsigns_config")
-require("pTelescope")
+require "lua_line_config"
+require "harpoon_config"
+require "maps"
+require "personal_cmp"
+require "personal_lsp"
+require "personal_nvim_tree"
+require "personal_packages"
+require "personal_ts"
+require "sets"
+require "personal_dap"
+require "dashboard_config"
+require "gitsigns_config"
+require "pTelescope"
