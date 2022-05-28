@@ -1,4 +1,11 @@
 require "paq" {
+  'tpope/vim-dispatch',
+  'clojure-vim/vim-jack-in',
+  'radenling/vim-dispatch-neovim',
+  'Olical/conjure',
+  'vimwiki/vimwiki',
+  'ThePrimeaen/harpoon',
+  'glepnir/dashboard-nvim',
 	"gruvbox-community/gruvbox",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-nvim-lsp",
@@ -12,7 +19,13 @@ require "paq" {
 	"tpope/vim-fugitive",
   'nvim-lua/plenary.nvim',
   'kyazdani42/nvim-web-devicons',
+  'tmux-plugins/vim-tmux',
   'mfussenegger/nvim-dap',
+  'lewis6991/gitsigns.nvim',
+  {
+  'kaicataldo/material.vim',
+  branch='main'
+  },
   {
       'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
