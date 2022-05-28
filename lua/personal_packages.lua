@@ -4,7 +4,7 @@ require "paq" {
   'radenling/vim-dispatch-neovim',
   'Olical/conjure',
   'vimwiki/vimwiki',
-  'ThePrimeaen/harpoon',
+  'ThePrimeagen/harpoon',
   'glepnir/dashboard-nvim',
 	"gruvbox-community/gruvbox",
 	"hrsh7th/cmp-buffer",
