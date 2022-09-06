@@ -11,3 +11,4 @@ require "personal_dap"
 require "dashboard_config"
 require "gitsigns_config"
 require "pTelescope"
+
