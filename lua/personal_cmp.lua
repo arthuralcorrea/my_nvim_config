@@ -23,7 +23,7 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<c-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
-    ["<c-y>"] = cmp.mapping.confirm {
+    ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -52,6 +52,7 @@ cmp.setup.filetype("lua", {
 cmp.setup.filetype("gitcommit", {
   sources = cmp.config.sources({
     { name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+    { name = "conventionalcommits" },
   }, {
     { name = "buffer" },
   }),

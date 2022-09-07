@@ -5,6 +5,7 @@ require "paq" {
       require("Comment").setup()
     end,
   },
+  "davidsierradz/cmp-conventionalcommits",
   "JohnnyMorganz/StyLua",
   "Olical/conjure",
   "ThePrimeagen/harpoon",
