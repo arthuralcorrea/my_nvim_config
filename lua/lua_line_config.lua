@@ -1,3 +1,7 @@
+local function relativePath()
+  return vim.fn.expand "%:~:."
+end
+
 require("lualine").setup {
   sections = {
     lualine_a = {
@@ -14,7 +18,7 @@ require("lualine").setup {
       },
     },
     lualine_c = {
-      "filename",
+      relativePath,
     },
     lualine_x = {
       "fileformat",
