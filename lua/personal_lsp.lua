@@ -6,7 +6,9 @@ local sumneko_root_path = fn.stdpath "cache" .. "/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/macOS/lua-language-server"
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 local capabilitiesCSS = vim.lsp.protocol.make_client_capabilities()
+
 capabilitiesCSS.textDocument.completion.completionItem.snippetSupport = true
 
 require("lspconfig").cssls.setup {}
