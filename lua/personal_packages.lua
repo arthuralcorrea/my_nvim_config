@@ -1,5 +1,12 @@
 require "paq" {
   {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  },
+  {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
