@@ -1,4 +1,4 @@
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
@@ -7,22 +7,28 @@ return require('packer').startup(function(use)
     },
   }
   use {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
+    "glacambre/firenvim",
+    run = function()
+      vim.fn["firenvim#install"](0)
     end,
   }
+  use { "williamboman/mason.nvim" }
+  use "nyoom-engineering/nyoom.nvim"
+  use "Shatur/neovim-ayu"
+  use "patstockwell/vim-monokai-tasty"
+  use "numToStr/Comment.nvim"
+  use "dbeniamine/cheat.sh-vim"
   use "davidsierradz/cmp-conventionalcommits"
   use "JohnnyMorganz/StyLua"
   use "Olical/conjure"
   use "ThePrimeagen/harpoon"
   use "clojure-vim/vim-jack-in"
-  use "glepnir/dashboard-nvim"
   use "gruvbox-community/gruvbox"
-  use "neovim/nvim-lspconfig"
+  use "EdenEast/nightfox.nvim"
   use "hrsh7th/cmp-buffer"
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
+  use "NLKNguyen/papercolor-theme"
   use "SirVer/ultisnips"
   use "dcampos/nvim-snippy"
   use "dcampos/cmp-snippy"
@@ -52,6 +58,7 @@ return require('packer').startup(function(use)
   use "tpope/vim-fugitive"
   use "vimwiki/vimwiki"
   use "wesleimp/stylua.nvim"
+  use "nvim-lua/plenary.nvim"
   use {
     "kaicataldo/material.vim",
     branch = "main",
@@ -68,4 +75,3 @@ return require('packer').startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   }
 end)
-

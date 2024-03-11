@@ -1,6 +1,11 @@
 lua require('init')
 
-colorscheme gruvbox
+
+let g:vim_monokai_tasty_italic = 1
+colorscheme PaperColor
+set background=dark
+set langmenu=en_US
+let $LANG = 'en_US'
 
 set noswapfile
 
